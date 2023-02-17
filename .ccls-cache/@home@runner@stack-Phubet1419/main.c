@@ -4,28 +4,17 @@
 #include "node.h"
 
 int main(int argc, char **argv){
-
   
   int i,N,j;
-  Stack s;
-  s.top=NULL;
-  s.size=0;
+  NodePtr top=NULL;
 
   for(i=1;i<argc;i++){
-    for(j=0;j<strlen(argv[i]);j++){
-      switch(argv[i][j]){
-        case'{':
-        case'{':  push(&s,atoi(argv[i]));
-                  break;
-        case'}': if(pop(&s)!='{')
-        case']': if
-          }
-      }
-    if()  printf("argv %d: Correct\n",i);
-      else
+    push(&top,atoi(argv[i]));
   }
 
-  pop_all(&s);
+  while(top){
+    printf("%d\n",pop(&top));
+  }
   /*push(&top,5);
   printf("%d\n",pop(&top));
   push(&top,7);
