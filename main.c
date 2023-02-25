@@ -1,58 +1,55 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
 #include "node.h"
+#include "stack.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int main(int argc, char **argv){
+void checking(int incorrect, int i);
 
-  
-  int i,N,j;
+int main(int argc, char **argv) {
+  int i, N, j;
   Stack s;
-  s.top=NULL;
-  s.size=0;
-
-  for(i=1;i<argc;i++){
-    for(j=0;j<strlen(argv[i]);j++){
-      switch(argv[i][j]){
-        case'{':
-        case'{':  push(&s,atoi(argv[i]));
-                  break;
-        case'}': if(pop(&s)!='{')
-        case']': if
-          }
+  s.top = NULL;
+  s.size = 0;
+  int incorrect = 1;
+  int c = 0;
+  printf("Checking the parentheses in argv arguments\n");
+  for (i = 1; i < argc; i++) {
+    char p;
+    incorrect = 1;
+    for (j = 0; j < strlen(argv[i]); j++)
+    {
+      switch (argv[i][j]) {
+      case '{':
+      case '[':
+        push(&s, argv[i][j]);
+        break;
+      case '}':
+        p = pop(&s);
+        if (p == '3') incorrect = 3;
+        else if (p != '{') incorrect = 0;
+        break;
+      case ']':
+        p = pop(&s);
+        if (p == '3') incorrect = 3;
+        else if (p != '[') incorrect = 0;
+        break;
       }
-    if()  printf("argv %d: Correct\n",i);
-      else
+    }
+    if (s.size > 0) incorrect = 2;
+    // else if (s.size - counter < 0) incorrect = 3;
+
+    if (incorrect == 0) printf("argv %d: incorrect: mismatch\n", i);
+    else if (incorrect == 2) printf("argv %d: incorrect: too many open parenthesis\n", i);
+    else if (incorrect == 3)printf("argv %d: incorrect: too many closed parenthesis\n", i);
+    else printf("argv %d: correct\n", i);
+    pop_all(&s);
   }
-
   pop_all(&s);
-  /*push(&top,5);
-  printf("%d\n",pop(&top));
-  push(&top,7);
-  push(&top,8);
-  printf("%d\n",pop(&top));
-  printf("%d\n",pop(&top));
-  printf("%d\n",pop(&top)); 
- 
- 
-  
+  return 0;
+}
 
- 
- Stack s;
- printf("Checking the parentheses in argv arguments\n");
-  for(i=1;i<argc;i++){
-   
-     for(j=0;j<strlen(argv[i]);j++){
-        Use stack to help with the parentheses*/
+void checking(int incorrect, int i)
+{
 
-
-    // }
-
-
-  //}
-//*/
-
-
-
-   return 0;
 }
