@@ -1,6 +1,8 @@
 { pkgs }: {
 	deps = [
-		pkgs../stack./stack 
+		pkgs.gnumake42
+  pkgs.gnumake42
+  pkgs../stack./stack 
   pkgs.gnumake
   pkgs../stack 4 5 1 6 4 9 46 46 4
   pkgs.gnumake42
