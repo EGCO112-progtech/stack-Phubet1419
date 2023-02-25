@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-void checking(int incorrect, int i);
 
 int main(int argc, char **argv) {
   int i, N, j;
@@ -49,7 +48,7 @@ int main(int argc, char **argv) {
   return 0;
 }
 
-void checking(int incorrect, int i)
+
 {
 
 }
