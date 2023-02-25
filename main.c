@@ -47,8 +47,3 @@ int main(int argc, char **argv) {
   pop_all(&s);
   return 0;
 }
-
-
-{
-
-}
